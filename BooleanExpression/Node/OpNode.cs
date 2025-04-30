@@ -17,18 +17,18 @@ public enum Operator
 
 public class OpNode : TerminalNode
 {
-    private static readonly Dictionary<Operator, int> OperatorSymbolCode = new Dictionary<Operator, int>()
+    private static readonly Dictionary<Operator, string> OperatorSymbolCode = new Dictionary<Operator, string>()
     {
-        { Operator.Leftparen, 1 },
-        { Operator.Rightparen, 2 },
-        { Operator.NotOperator, 1 },
-        { Operator.AndOperator, 1 },
-        { Operator.OrOperator, 1 },
-        { Operator.XorOperator, 1 },
-        { Operator.ImplicationOperator, 1 },
-        { Operator.ConsequenceOperator, 1 },
-        { Operator.EquivalentOperator, 1 },
-        { Operator.NotEquivalentOperator, 1 },
+        { Operator.Leftparen, "(" },
+        { Operator.Rightparen, ")" },
+        { Operator.NotOperator, "NOT" },
+        { Operator.AndOperator, "AND" },
+        { Operator.OrOperator, "OR" },
+        { Operator.XorOperator, "XOR" },
+        { Operator.ImplicationOperator, "IMPL" },
+        { Operator.ConsequenceOperator, "CONS" },
+        { Operator.EquivalentOperator, "EQ" },
+        { Operator.NotEquivalentOperator, "NEQ" },
     } ; 
     
    private Operator _op ;
@@ -36,6 +36,8 @@ public class OpNode : TerminalNode
    public OpNode(Operator op)
    {
        _op = op;
-       SymbolCode = OperatorSymbolCode[op] ;
+       Lexeme = OperatorSymbolCode[op] ;
    }
+
+  
 }

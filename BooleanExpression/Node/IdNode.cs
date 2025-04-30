@@ -2,8 +2,10 @@ namespace BooleanExpression.Node ;
 
 public class IdNode : TerminalNode
 {
-    public IdNode(int value)
+    public IdNode(string value)
     {
-        SymbolCode = value ; 
+        Lexeme = value ; 
     }
+
+    
 }

@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooleanExpression", "BooleanExpression\BooleanExpression.csproj", "{50817ED8-EA1D-4792-BE1D-DA572D00FF39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooleanExpressionTests", "BooleanExpressionTests\BooleanExpressionTests.csproj", "{8CF6D6A2-EA8D-4985-BC98-1EE0C391960C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{50817ED8-EA1D-4792-BE1D-DA572D00FF39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50817ED8-EA1D-4792-BE1D-DA572D00FF39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50817ED8-EA1D-4792-BE1D-DA572D00FF39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CF6D6A2-EA8D-4985-BC98-1EE0C391960C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CF6D6A2-EA8D-4985-BC98-1EE0C391960C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CF6D6A2-EA8D-4985-BC98-1EE0C391960C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CF6D6A2-EA8D-4985-BC98-1EE0C391960C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
