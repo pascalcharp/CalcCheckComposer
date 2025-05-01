@@ -11,4 +11,9 @@ public class IdNode : TerminalNode
     {
         Lexeme = value ;
     }
+
+    public override BasicNode GetCopy()
+    {
+        return new IdNode(Lexeme) ;
+    }
 }

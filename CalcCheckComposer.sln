@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooleanExpression", "Boolea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooleanExpressionTests", "BooleanExpressionTests\BooleanExpressionTests.csproj", "{8CF6D6A2-EA8D-4985-BC98-1EE0C391960C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composer", "Composer\Composer.csproj", "{C009B608-5A5B-4FAC-9966-FE0BC10B3455}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{8CF6D6A2-EA8D-4985-BC98-1EE0C391960C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CF6D6A2-EA8D-4985-BC98-1EE0C391960C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CF6D6A2-EA8D-4985-BC98-1EE0C391960C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C009B608-5A5B-4FAC-9966-FE0BC10B3455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C009B608-5A5B-4FAC-9966-FE0BC10B3455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C009B608-5A5B-4FAC-9966-FE0BC10B3455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C009B608-5A5B-4FAC-9966-FE0BC10B3455}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

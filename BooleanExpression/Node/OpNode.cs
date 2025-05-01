@@ -27,5 +27,9 @@ public class OpNode : TerminalNode
        Lexeme = OperatorSymbolCode[op] ;
    }
 
-  
+
+   public override BasicNode GetCopy()
+   {
+       return new OpNode(_op) ;
+   }
 }

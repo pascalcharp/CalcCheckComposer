@@ -10,11 +10,8 @@ public abstract class BasicNode
         _uuid = Guid.NewGuid() ;
     }
 
-    protected BasicNode(BasicNode source)
-    {
-        _uuid = Guid.NewGuid () ;
-    }
-
+    public abstract BasicNode GetCopy() ; 
+    
     public Guid GetNodeId()
     {
         return _uuid ;
