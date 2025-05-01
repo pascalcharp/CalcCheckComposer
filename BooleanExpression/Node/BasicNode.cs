@@ -3,7 +3,17 @@ namespace BooleanExpression.Node ;
 public abstract class BasicNode
 {
     
-    private readonly Guid _uuid = Guid.NewGuid() ;
+    private readonly Guid _uuid  ;
+
+    protected BasicNode()
+    {
+        _uuid = Guid.NewGuid() ;
+    }
+
+    protected BasicNode(BasicNode source)
+    {
+        _uuid = Guid.NewGuid () ;
+    }
 
     public Guid GetNodeId()
     {

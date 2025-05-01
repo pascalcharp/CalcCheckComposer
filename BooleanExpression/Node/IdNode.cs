@@ -7,5 +7,8 @@ public class IdNode : TerminalNode
         Lexeme = value ; 
     }
 
-    
+    public void SubstituteLexeme(string value)
+    {
+        Lexeme = value ;
+    }
 }

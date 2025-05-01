@@ -44,7 +44,7 @@ public class BooleanExpression
         AuxCollapseNode(node) ;
     }
 
-    public void AddVariableProduction(Guid nodeId, string value)
+    public Guid GenerateIdProduction(Guid nodeId, string value)
     {
         var node = GetNodeFromId(nodeId) as NonTerminalNode ?? throw new Exception("Node is not a non-terminal node") ;
         if (node.HasChildren()) throw new Exception("Node cannot be expanded.") ;
@@ -53,9 +53,11 @@ public class BooleanExpression
 
         node.AddChildren([newNode]) ;
         _nodes.Add(newNode.GetNodeId(), newNode) ;
+        
+        return newNode.GetNodeId() ;
     }
 
-    public (Guid leftChild, Guid rightChild) AddBinaryOperatorProduction(Guid nodeId, Operator op)
+    public (Guid leftChild, Guid rightChild) GenerateBinaryOperatorProduction(Guid nodeId, Operator op)
     {
         var node = GetNodeFromId(nodeId) as NonTerminalNode ?? throw new Exception("Node is not a non-terminal node") ;
         if (node.HasChildren()) throw new Exception("Node cannot be expanded.") ;
@@ -70,7 +72,7 @@ public class BooleanExpression
         return (lhsNode.GetNodeId(), rhsNode.GetNodeId()) ;
     }
 
-    public void AddUnaryOperatorProduction(Guid nodeId, Operator op)
+    public Guid GenerateUnaryOperatorProduction(Guid nodeId, Operator op)
     {
         var node = GetNodeFromId(nodeId) as NonTerminalNode ?? throw new Exception("Node is not a non-terminal node") ;
         if (node.HasChildren()) throw new Exception("Node cannot be expanded.") ;
@@ -78,9 +80,11 @@ public class BooleanExpression
         
         node.AddChildren([new OpNode(op), lhsNode]) ;
         _nodes.Add(lhsNode.GetNodeId(), lhsNode) ;
+        
+        return lhsNode.GetNodeId() ;
     }
 
-    public void AddParenthesisProduction(Guid nodeId)
+    public Guid GenerateParenthesisProduction(Guid nodeId)
     {
         var node = GetNodeFromId(nodeId) as NonTerminalNode ?? throw new Exception("Node is not a non-terminal node") ;
         if (node.HasChildren()) throw new Exception("Node cannot be expanded.") ;
@@ -89,6 +93,8 @@ public class BooleanExpression
 
         node.AddChildren([new OpNode(Operator.Leftparen), newNode, new OpNode(Operator.Rightparen)]) ;
         _nodes.Add(newNode.GetNodeId(), newNode) ;
+        
+        return newNode.GetNodeId() ;
     }
 
     private void AuxBuildOutputStringBuilder(StringBuilder builder, BasicNode node)
@@ -99,6 +105,12 @@ public class BooleanExpression
             var ntn = node as NonTerminalNode ?? throw new Exception("Node is not a non-terminal node") ;
             foreach (var c in ntn.Children) AuxBuildOutputStringBuilder(builder, c);
         }
+    }
+
+    public void ModifyIdName(Guid nodeId, string name)
+    {
+        var node = GetNodeFromId(nodeId) as IdNode ?? throw new Exception("Node is not an id node") ;
+        node.SubstituteLexeme(name) ;
     }
 
     public override string ToString()
